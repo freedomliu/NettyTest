@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>orgin</groupId>
+  <artifactId>NettyTest</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>NettyTest</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+	<build>
+	        <plugins>
+	            <plugin>
+	                <artifactId>maven-assembly-plugin</artifactId>
+	                <configuration>
+	                    <archive>
+	                        <manifest>
+	                        	<!-- assembly:assembly -->
+	                            <!-- 我运行这个jar所运行的主类 -->
+	                            <mainClass>orgin.NettyTest.EchoServer</mainClass>
+							<!--<mainClass>orgin.NettyTest.EchoClient</mainClass> -->
+	                        </manifest>
+	                    </archive>
+	                    <descriptorRefs>
+	                        <descriptorRef>
+	                            <!-- 必须是这样写 -->
+	                            jar-with-dependencies
+	                        </descriptorRef>
+	                    </descriptorRefs>
+	                </configuration>
+	            </plugin>
+	        </plugins>
+	    </build>
+
+  <dependencies>
+	  <dependency>
+		<groupId>io.netty</groupId>
+		<artifactId>netty-all</artifactId>
+		<version>5.0.0.Alpha1</version>
+	</dependency>
+  </dependencies>
+</project>
